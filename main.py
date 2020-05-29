@@ -16,9 +16,13 @@ warnings.filterwarnings("ignore")
 if __name__ == '__main__':
     model = ModelPredict('save')
     while True:
+        print('*******************************')
         file_path = input('input file path: ')
-        start = time.time()
-        paper = PaperXML(file_path)
-        # print(paper.section_text)
-        model.predict(paper.section_text)
-        print(time.time() - start)
+        try:
+            start = time.time()
+            paper = PaperXML(file_path)
+            # print(paper.section_text)
+            model.predict(paper.section_text)
+            print(time.time() - start)
+        except ValueError as e:
+            print('Please input a file')

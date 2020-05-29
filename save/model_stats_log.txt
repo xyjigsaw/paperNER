@@ -1,0 +1,705 @@
+"C:\Program Files\Python36\python.exe" C:/Users/xy644/Desktop/scibert-project/scibert-tf/train_bert.py
+Reading instances from lines in file at:  sciie/train.txt
+Reading instances from lines in file at:  sciie/test.txt
+Reading instances from lines in file at:  sciie/dev.txt
+C:\Users\xy644\AppData\Roaming\Python\Python36\site-packages\bert4keras\__init__.py:22: UserWarning: bert4keras.bert has been renamed as bert4keras.models.
+  warnings.warn('bert4keras.bert has been renamed as bert4keras.models.')
+C:\Users\xy644\AppData\Roaming\Python\Python36\site-packages\bert4keras\__init__.py:23: UserWarning: please use bert4keras.models.
+  warnings.warn('please use bert4keras.models.')
+C:\Users\xy644\AppData\Roaming\Python\Python36\site-packages\bert4keras\__init__.py:44: UserWarning: bert4keras.tokenizer has been renamed as bert4keras.tokenizers.
+  warnings.warn('bert4keras.tokenizer has been renamed as bert4keras.tokenizers.')
+C:\Users\xy644\AppData\Roaming\Python\Python36\site-packages\bert4keras\__init__.py:45: UserWarning: please use bert4keras.tokenizers.
+  warnings.warn('please use bert4keras.tokenizers.')
+WARNING:root:seq_len: 20
+Model: "model_4"
+__________________________________________________________________________________________________
+Layer (type)                    Output Shape         Param #     Connected to                     
+==================================================================================================
+Input-Token (InputLayer)        [(None, 20)]         0                                            
+__________________________________________________________________________________________________
+Input-Segment (InputLayer)      [(None, 20)]         0                                            
+__________________________________________________________________________________________________
+Embedding-Token (TokenEmbedding [(None, 20, 768), (3 23877120    Input-Token[0][0]                
+__________________________________________________________________________________________________
+Embedding-Segment (Embedding)   (None, 20, 768)      1536        Input-Segment[0][0]              
+__________________________________________________________________________________________________
+Embedding-Token-Segment (Add)   (None, 20, 768)      0           Embedding-Token[0][0]            
+                                                                 Embedding-Segment[0][0]          
+__________________________________________________________________________________________________
+Embedding-Position (PositionEmb (None, 20, 768)      15360       Embedding-Token-Segment[0][0]    
+__________________________________________________________________________________________________
+Embedding-Dropout (Dropout)     (None, 20, 768)      0           Embedding-Position[0][0]         
+__________________________________________________________________________________________________
+Embedding-Norm (LayerNormalizat (None, 20, 768)      1536        Embedding-Dropout[0][0]          
+__________________________________________________________________________________________________
+Encoder-1-MultiHeadSelfAttentio (None, 20, 768)      2362368     Embedding-Norm[0][0]             
+__________________________________________________________________________________________________
+Encoder-1-MultiHeadSelfAttentio (None, 20, 768)      0           Encoder-1-MultiHeadSelfAttention[
+__________________________________________________________________________________________________
+Encoder-1-MultiHeadSelfAttentio (None, 20, 768)      0           Embedding-Norm[0][0]             
+                                                                 Encoder-1-MultiHeadSelfAttention-
+__________________________________________________________________________________________________
+Encoder-1-MultiHeadSelfAttentio (None, 20, 768)      1536        Encoder-1-MultiHeadSelfAttention-
+__________________________________________________________________________________________________
+Encoder-1-FeedForward (FeedForw (None, 20, 768)      4722432     Encoder-1-MultiHeadSelfAttention-
+__________________________________________________________________________________________________
+Encoder-1-FeedForward-Dropout ( (None, 20, 768)      0           Encoder-1-FeedForward[0][0]      
+__________________________________________________________________________________________________
+Encoder-1-FeedForward-Add (Add) (None, 20, 768)      0           Encoder-1-MultiHeadSelfAttention-
+                                                                 Encoder-1-FeedForward-Dropout[0][
+__________________________________________________________________________________________________
+Encoder-1-FeedForward-Norm (Lay (None, 20, 768)      1536        Encoder-1-FeedForward-Add[0][0]  
+__________________________________________________________________________________________________
+Encoder-2-MultiHeadSelfAttentio (None, 20, 768)      2362368     Encoder-1-FeedForward-Norm[0][0] 
+__________________________________________________________________________________________________
+Encoder-2-MultiHeadSelfAttentio (None, 20, 768)      0           Encoder-2-MultiHeadSelfAttention[
+__________________________________________________________________________________________________
+Encoder-2-MultiHeadSelfAttentio (None, 20, 768)      0           Encoder-1-FeedForward-Norm[0][0] 
+                                                                 Encoder-2-MultiHeadSelfAttention-
+__________________________________________________________________________________________________
+Encoder-2-MultiHeadSelfAttentio (None, 20, 768)      1536        Encoder-2-MultiHeadSelfAttention-
+__________________________________________________________________________________________________
+Encoder-2-FeedForward (FeedForw (None, 20, 768)      4722432     Encoder-2-MultiHeadSelfAttention-
+__________________________________________________________________________________________________
+Encoder-2-FeedForward-Dropout ( (None, 20, 768)      0           Encoder-2-FeedForward[0][0]      
+__________________________________________________________________________________________________
+Encoder-2-FeedForward-Add (Add) (None, 20, 768)      0           Encoder-2-MultiHeadSelfAttention-
+                                                                 Encoder-2-FeedForward-Dropout[0][
+__________________________________________________________________________________________________
+Encoder-2-FeedForward-Norm (Lay (None, 20, 768)      1536        Encoder-2-FeedForward-Add[0][0]  
+__________________________________________________________________________________________________
+Encoder-3-MultiHeadSelfAttentio (None, 20, 768)      2362368     Encoder-2-FeedForward-Norm[0][0] 
+__________________________________________________________________________________________________
+Encoder-3-MultiHeadSelfAttentio (None, 20, 768)      0           Encoder-3-MultiHeadSelfAttention[
+__________________________________________________________________________________________________
+Encoder-3-MultiHeadSelfAttentio (None, 20, 768)      0           Encoder-2-FeedForward-Norm[0][0] 
+                                                                 Encoder-3-MultiHeadSelfAttention-
+__________________________________________________________________________________________________
+Encoder-3-MultiHeadSelfAttentio (None, 20, 768)      1536        Encoder-3-MultiHeadSelfAttention-
+__________________________________________________________________________________________________
+Encoder-3-FeedForward (FeedForw (None, 20, 768)      4722432     Encoder-3-MultiHeadSelfAttention-
+__________________________________________________________________________________________________
+Encoder-3-FeedForward-Dropout ( (None, 20, 768)      0           Encoder-3-FeedForward[0][0]      
+__________________________________________________________________________________________________
+Encoder-3-FeedForward-Add (Add) (None, 20, 768)      0           Encoder-3-MultiHeadSelfAttention-
+                                                                 Encoder-3-FeedForward-Dropout[0][
+__________________________________________________________________________________________________
+Encoder-3-FeedForward-Norm (Lay (None, 20, 768)      1536        Encoder-3-FeedForward-Add[0][0]  
+__________________________________________________________________________________________________
+Encoder-4-MultiHeadSelfAttentio (None, 20, 768)      2362368     Encoder-3-FeedForward-Norm[0][0] 
+__________________________________________________________________________________________________
+Encoder-4-MultiHeadSelfAttentio (None, 20, 768)      0           Encoder-4-MultiHeadSelfAttention[
+__________________________________________________________________________________________________
+Encoder-4-MultiHeadSelfAttentio (None, 20, 768)      0           Encoder-3-FeedForward-Norm[0][0] 
+                                                                 Encoder-4-MultiHeadSelfAttention-
+__________________________________________________________________________________________________
+Encoder-4-MultiHeadSelfAttentio (None, 20, 768)      1536        Encoder-4-MultiHeadSelfAttention-
+__________________________________________________________________________________________________
+Encoder-4-FeedForward (FeedForw (None, 20, 768)      4722432     Encoder-4-MultiHeadSelfAttention-
+__________________________________________________________________________________________________
+Encoder-4-FeedForward-Dropout ( (None, 20, 768)      0           Encoder-4-FeedForward[0][0]      
+__________________________________________________________________________________________________
+Encoder-4-FeedForward-Add (Add) (None, 20, 768)      0           Encoder-4-MultiHeadSelfAttention-
+                                                                 Encoder-4-FeedForward-Dropout[0][
+__________________________________________________________________________________________________
+Encoder-4-FeedForward-Norm (Lay (None, 20, 768)      1536        Encoder-4-FeedForward-Add[0][0]  
+__________________________________________________________________________________________________
+Encoder-5-MultiHeadSelfAttentio (None, 20, 768)      2362368     Encoder-4-FeedForward-Norm[0][0] 
+__________________________________________________________________________________________________
+Encoder-5-MultiHeadSelfAttentio (None, 20, 768)      0           Encoder-5-MultiHeadSelfAttention[
+__________________________________________________________________________________________________
+Encoder-5-MultiHeadSelfAttentio (None, 20, 768)      0           Encoder-4-FeedForward-Norm[0][0] 
+                                                                 Encoder-5-MultiHeadSelfAttention-
+__________________________________________________________________________________________________
+Encoder-5-MultiHeadSelfAttentio (None, 20, 768)      1536        Encoder-5-MultiHeadSelfAttention-
+__________________________________________________________________________________________________
+Encoder-5-FeedForward (FeedForw (None, 20, 768)      4722432     Encoder-5-MultiHeadSelfAttention-
+__________________________________________________________________________________________________
+Encoder-5-FeedForward-Dropout ( (None, 20, 768)      0           Encoder-5-FeedForward[0][0]      
+__________________________________________________________________________________________________
+Encoder-5-FeedForward-Add (Add) (None, 20, 768)      0           Encoder-5-MultiHeadSelfAttention-
+                                                                 Encoder-5-FeedForward-Dropout[0][
+__________________________________________________________________________________________________
+Encoder-5-FeedForward-Norm (Lay (None, 20, 768)      1536        Encoder-5-FeedForward-Add[0][0]  
+__________________________________________________________________________________________________
+Encoder-6-MultiHeadSelfAttentio (None, 20, 768)      2362368     Encoder-5-FeedForward-Norm[0][0] 
+__________________________________________________________________________________________________
+Encoder-6-MultiHeadSelfAttentio (None, 20, 768)      0           Encoder-6-MultiHeadSelfAttention[
+__________________________________________________________________________________________________
+Encoder-6-MultiHeadSelfAttentio (None, 20, 768)      0           Encoder-5-FeedForward-Norm[0][0] 
+                                                                 Encoder-6-MultiHeadSelfAttention-
+__________________________________________________________________________________________________
+Encoder-6-MultiHeadSelfAttentio (None, 20, 768)      1536        Encoder-6-MultiHeadSelfAttention-
+__________________________________________________________________________________________________
+Encoder-6-FeedForward (FeedForw (None, 20, 768)      4722432     Encoder-6-MultiHeadSelfAttention-
+__________________________________________________________________________________________________
+Encoder-6-FeedForward-Dropout ( (None, 20, 768)      0           Encoder-6-FeedForward[0][0]      
+__________________________________________________________________________________________________
+Encoder-6-FeedForward-Add (Add) (None, 20, 768)      0           Encoder-6-MultiHeadSelfAttention-
+                                                                 Encoder-6-FeedForward-Dropout[0][
+__________________________________________________________________________________________________
+Encoder-6-FeedForward-Norm (Lay (None, 20, 768)      1536        Encoder-6-FeedForward-Add[0][0]  
+__________________________________________________________________________________________________
+Encoder-7-MultiHeadSelfAttentio (None, 20, 768)      2362368     Encoder-6-FeedForward-Norm[0][0] 
+__________________________________________________________________________________________________
+Encoder-7-MultiHeadSelfAttentio (None, 20, 768)      0           Encoder-7-MultiHeadSelfAttention[
+__________________________________________________________________________________________________
+Encoder-7-MultiHeadSelfAttentio (None, 20, 768)      0           Encoder-6-FeedForward-Norm[0][0] 
+                                                                 Encoder-7-MultiHeadSelfAttention-
+__________________________________________________________________________________________________
+Encoder-7-MultiHeadSelfAttentio (None, 20, 768)      1536        Encoder-7-MultiHeadSelfAttention-
+__________________________________________________________________________________________________
+Encoder-7-FeedForward (FeedForw (None, 20, 768)      4722432     Encoder-7-MultiHeadSelfAttention-
+__________________________________________________________________________________________________
+Encoder-7-FeedForward-Dropout ( (None, 20, 768)      0           Encoder-7-FeedForward[0][0]      
+__________________________________________________________________________________________________
+Encoder-7-FeedForward-Add (Add) (None, 20, 768)      0           Encoder-7-MultiHeadSelfAttention-
+                                                                 Encoder-7-FeedForward-Dropout[0][
+__________________________________________________________________________________________________
+Encoder-7-FeedForward-Norm (Lay (None, 20, 768)      1536        Encoder-7-FeedForward-Add[0][0]  
+__________________________________________________________________________________________________
+Encoder-8-MultiHeadSelfAttentio (None, 20, 768)      2362368     Encoder-7-FeedForward-Norm[0][0] 
+__________________________________________________________________________________________________
+Encoder-8-MultiHeadSelfAttentio (None, 20, 768)      0           Encoder-8-MultiHeadSelfAttention[
+__________________________________________________________________________________________________
+Encoder-8-MultiHeadSelfAttentio (None, 20, 768)      0           Encoder-7-FeedForward-Norm[0][0] 
+                                                                 Encoder-8-MultiHeadSelfAttention-
+__________________________________________________________________________________________________
+Encoder-8-MultiHeadSelfAttentio (None, 20, 768)      1536        Encoder-8-MultiHeadSelfAttention-
+__________________________________________________________________________________________________
+Encoder-8-FeedForward (FeedForw (None, 20, 768)      4722432     Encoder-8-MultiHeadSelfAttention-
+__________________________________________________________________________________________________
+Encoder-8-FeedForward-Dropout ( (None, 20, 768)      0           Encoder-8-FeedForward[0][0]      
+__________________________________________________________________________________________________
+Encoder-8-FeedForward-Add (Add) (None, 20, 768)      0           Encoder-8-MultiHeadSelfAttention-
+                                                                 Encoder-8-FeedForward-Dropout[0][
+__________________________________________________________________________________________________
+Encoder-8-FeedForward-Norm (Lay (None, 20, 768)      1536        Encoder-8-FeedForward-Add[0][0]  
+__________________________________________________________________________________________________
+Encoder-9-MultiHeadSelfAttentio (None, 20, 768)      2362368     Encoder-8-FeedForward-Norm[0][0] 
+__________________________________________________________________________________________________
+Encoder-9-MultiHeadSelfAttentio (None, 20, 768)      0           Encoder-9-MultiHeadSelfAttention[
+__________________________________________________________________________________________________
+Encoder-9-MultiHeadSelfAttentio (None, 20, 768)      0           Encoder-8-FeedForward-Norm[0][0] 
+                                                                 Encoder-9-MultiHeadSelfAttention-
+__________________________________________________________________________________________________
+Encoder-9-MultiHeadSelfAttentio (None, 20, 768)      1536        Encoder-9-MultiHeadSelfAttention-
+__________________________________________________________________________________________________
+Encoder-9-FeedForward (FeedForw (None, 20, 768)      4722432     Encoder-9-MultiHeadSelfAttention-
+__________________________________________________________________________________________________
+Encoder-9-FeedForward-Dropout ( (None, 20, 768)      0           Encoder-9-FeedForward[0][0]      
+__________________________________________________________________________________________________
+Encoder-9-FeedForward-Add (Add) (None, 20, 768)      0           Encoder-9-MultiHeadSelfAttention-
+                                                                 Encoder-9-FeedForward-Dropout[0][
+__________________________________________________________________________________________________
+Encoder-9-FeedForward-Norm (Lay (None, 20, 768)      1536        Encoder-9-FeedForward-Add[0][0]  
+__________________________________________________________________________________________________
+Encoder-10-MultiHeadSelfAttenti (None, 20, 768)      2362368     Encoder-9-FeedForward-Norm[0][0] 
+__________________________________________________________________________________________________
+Encoder-10-MultiHeadSelfAttenti (None, 20, 768)      0           Encoder-10-MultiHeadSelfAttention
+__________________________________________________________________________________________________
+Encoder-10-MultiHeadSelfAttenti (None, 20, 768)      0           Encoder-9-FeedForward-Norm[0][0] 
+                                                                 Encoder-10-MultiHeadSelfAttention
+__________________________________________________________________________________________________
+Encoder-10-MultiHeadSelfAttenti (None, 20, 768)      1536        Encoder-10-MultiHeadSelfAttention
+__________________________________________________________________________________________________
+Encoder-10-FeedForward (FeedFor (None, 20, 768)      4722432     Encoder-10-MultiHeadSelfAttention
+__________________________________________________________________________________________________
+Encoder-10-FeedForward-Dropout  (None, 20, 768)      0           Encoder-10-FeedForward[0][0]     
+__________________________________________________________________________________________________
+Encoder-10-FeedForward-Add (Add (None, 20, 768)      0           Encoder-10-MultiHeadSelfAttention
+                                                                 Encoder-10-FeedForward-Dropout[0]
+__________________________________________________________________________________________________
+Encoder-10-FeedForward-Norm (La (None, 20, 768)      1536        Encoder-10-FeedForward-Add[0][0] 
+__________________________________________________________________________________________________
+Encoder-11-MultiHeadSelfAttenti (None, 20, 768)      2362368     Encoder-10-FeedForward-Norm[0][0]
+__________________________________________________________________________________________________
+Encoder-11-MultiHeadSelfAttenti (None, 20, 768)      0           Encoder-11-MultiHeadSelfAttention
+__________________________________________________________________________________________________
+Encoder-11-MultiHeadSelfAttenti (None, 20, 768)      0           Encoder-10-FeedForward-Norm[0][0]
+                                                                 Encoder-11-MultiHeadSelfAttention
+__________________________________________________________________________________________________
+Encoder-11-MultiHeadSelfAttenti (None, 20, 768)      1536        Encoder-11-MultiHeadSelfAttention
+__________________________________________________________________________________________________
+Encoder-11-FeedForward (FeedFor (None, 20, 768)      4722432     Encoder-11-MultiHeadSelfAttention
+__________________________________________________________________________________________________
+Encoder-11-FeedForward-Dropout  (None, 20, 768)      0           Encoder-11-FeedForward[0][0]     
+__________________________________________________________________________________________________
+Encoder-11-FeedForward-Add (Add (None, 20, 768)      0           Encoder-11-MultiHeadSelfAttention
+                                                                 Encoder-11-FeedForward-Dropout[0]
+__________________________________________________________________________________________________
+Encoder-11-FeedForward-Norm (La (None, 20, 768)      1536        Encoder-11-FeedForward-Add[0][0] 
+__________________________________________________________________________________________________
+Encoder-12-MultiHeadSelfAttenti (None, 20, 768)      2362368     Encoder-11-FeedForward-Norm[0][0]
+__________________________________________________________________________________________________
+Encoder-12-MultiHeadSelfAttenti (None, 20, 768)      0           Encoder-12-MultiHeadSelfAttention
+__________________________________________________________________________________________________
+Encoder-12-MultiHeadSelfAttenti (None, 20, 768)      0           Encoder-11-FeedForward-Norm[0][0]
+                                                                 Encoder-12-MultiHeadSelfAttention
+__________________________________________________________________________________________________
+Encoder-12-MultiHeadSelfAttenti (None, 20, 768)      1536        Encoder-12-MultiHeadSelfAttention
+__________________________________________________________________________________________________
+Encoder-12-FeedForward (FeedFor (None, 20, 768)      4722432     Encoder-12-MultiHeadSelfAttention
+__________________________________________________________________________________________________
+Encoder-12-FeedForward-Dropout  (None, 20, 768)      0           Encoder-12-FeedForward[0][0]     
+__________________________________________________________________________________________________
+Encoder-12-FeedForward-Add (Add (None, 20, 768)      0           Encoder-12-MultiHeadSelfAttention
+                                                                 Encoder-12-FeedForward-Dropout[0]
+__________________________________________________________________________________________________
+Encoder-12-FeedForward-Norm (La (None, 20, 768)      1536        Encoder-12-FeedForward-Add[0][0] 
+__________________________________________________________________________________________________
+Encoder-Output (Concatenate)    (None, 20, 3072)     0           Encoder-9-FeedForward-Norm[0][0] 
+                                                                 Encoder-10-FeedForward-Norm[0][0]
+                                                                 Encoder-11-FeedForward-Norm[0][0]
+                                                                 Encoder-12-FeedForward-Norm[0][0]
+__________________________________________________________________________________________________
+non_masking_layer (NonMaskingLa (None, 20, 3072)     0           Encoder-Output[0][0]             
+__________________________________________________________________________________________________
+layer_blstm (Bidirectional)     (None, 20, 256)      3277824     non_masking_layer[0][0]          
+__________________________________________________________________________________________________
+layer_dense (Dense)             (None, 20, 64)       16448       layer_blstm[0][0]                
+__________________________________________________________________________________________________
+layer_crf_dense (Dense)         (None, 20, 11)       715         layer_dense[0][0]                
+__________________________________________________________________________________________________
+layer_crf (CRF)                 (None, 20, 11)       121         layer_crf_dense[0][0]            
+==================================================================================================
+Total params: 112,245,124
+Trainable params: 3,295,108
+Non-trainable params: 108,950,016
+__________________________________________________________________________________________________
+Epoch 1/20
+
+ 1/15 [=>............................] - ETA: 2:35 - loss: 53.5199 - accuracy: 0.0531
+ 2/15 [===>..........................] - ETA: 1:52 - loss: 40.1788 - accuracy: 0.3453
+ 3/15 [=====>........................] - ETA: 1:33 - loss: 34.1768 - accuracy: 0.4686
+ 4/15 [=======>......................] - ETA: 1:21 - loss: 30.2089 - accuracy: 0.5405
+ 5/15 [=========>....................] - ETA: 1:12 - loss: 27.4912 - accuracy: 0.5871
+ 6/15 [===========>..................] - ETA: 1:03 - loss: 25.6289 - accuracy: 0.6150
+ 7/15 [=============>................] - ETA: 56s - loss: 24.0658 - accuracy: 0.6399 
+ 8/15 [===============>..............] - ETA: 49s - loss: 22.8020 - accuracy: 0.6591
+ 9/15 [=================>............] - ETA: 42s - loss: 21.6903 - accuracy: 0.6743
+10/15 [===================>..........] - ETA: 34s - loss: 20.7972 - accuracy: 0.6850
+11/15 [=====================>........] - ETA: 27s - loss: 19.9461 - accuracy: 0.6967
+12/15 [=======================>......] - ETA: 20s - loss: 19.2703 - accuracy: 0.7060
+13/15 [=========================>....] - ETA: 13s - loss: 18.6608 - accuracy: 0.7141
+14/15 [===========================>..] - ETA: 6s - loss: 18.1280 - accuracy: 0.7222 Epoch 1/20
+
+ 1/15 [=>............................] - ETA: 1:39 - loss: 37.8930 - accuracy: 0.5773
+ 2/15 [===>..........................] - ETA: 1:22 - loss: 37.6574 - accuracy: 0.5877
+ 3/15 [=====>........................] - ETA: 54s - loss: 37.2786 - accuracy: 0.5904 
+15/15 [==============================] - 114s 8s/step - loss: 17.6492 - accuracy: 0.7261 - val_loss: 37.2786 - val_accuracy: 0.5904
+Epoch 2/20
+
+ 1/15 [=>............................] - ETA: 1:33 - loss: 9.7629 - accuracy: 0.8422
+ 2/15 [===>..........................] - ETA: 1:27 - loss: 9.9112 - accuracy: 0.8465
+ 3/15 [=====>........................] - ETA: 1:21 - loss: 9.7674 - accuracy: 0.8505
+ 4/15 [=======>......................] - ETA: 1:14 - loss: 9.7888 - accuracy: 0.8461
+ 5/15 [=========>....................] - ETA: 1:07 - loss: 9.5253 - accuracy: 0.8475
+ 6/15 [===========>..................] - ETA: 1:00 - loss: 9.3388 - accuracy: 0.8497
+ 7/15 [=============>................] - ETA: 53s - loss: 9.1901 - accuracy: 0.8510 
+ 8/15 [===============>..............] - ETA: 47s - loss: 9.0958 - accuracy: 0.8516
+ 9/15 [=================>............] - ETA: 40s - loss: 9.0083 - accuracy: 0.8531
+10/15 [===================>..........] - ETA: 33s - loss: 8.9884 - accuracy: 0.8538
+11/15 [=====================>........] - ETA: 26s - loss: 8.9361 - accuracy: 0.8536
+12/15 [=======================>......] - ETA: 20s - loss: 8.9045 - accuracy: 0.8544
+13/15 [=========================>....] - ETA: 13s - loss: 8.8618 - accuracy: 0.8544
+14/15 [===========================>..] - ETA: 6s - loss: 8.8281 - accuracy: 0.8547 Epoch 1/20
+
+ 1/15 [=>............................] - ETA: 15s - loss: 36.4750 - accuracy: 0.6263
+ 2/15 [===>..........................] - ETA: 43s - loss: 36.5831 - accuracy: 0.6221
+ 3/15 [=====>........................] - ETA: 48s - loss: 36.7246 - accuracy: 0.6140
+15/15 [==============================] - 110s 7s/step - loss: 8.7430 - accuracy: 0.8553 - val_loss: 36.7246 - val_accuracy: 0.6140
+Epoch 3/20
+
+ 1/15 [=>............................] - ETA: 1:33 - loss: 7.5967 - accuracy: 0.8805
+ 2/15 [===>..........................] - ETA: 1:26 - loss: 7.6442 - accuracy: 0.8750
+ 3/15 [=====>........................] - ETA: 1:20 - loss: 7.8349 - accuracy: 0.8691
+ 4/15 [=======>......................] - ETA: 1:13 - loss: 7.7423 - accuracy: 0.8692
+ 5/15 [=========>....................] - ETA: 1:06 - loss: 7.7405 - accuracy: 0.8682
+ 6/15 [===========>..................] - ETA: 1:00 - loss: 7.6892 - accuracy: 0.8694
+ 7/15 [=============>................] - ETA: 53s - loss: 7.5741 - accuracy: 0.8712 
+ 8/15 [===============>..............] - ETA: 46s - loss: 7.6010 - accuracy: 0.8706
+ 9/15 [=================>............] - ETA: 40s - loss: 7.5789 - accuracy: 0.8711
+10/15 [===================>..........] - ETA: 33s - loss: 7.5258 - accuracy: 0.8719
+11/15 [=====================>........] - ETA: 26s - loss: 7.4736 - accuracy: 0.8724
+12/15 [=======================>......] - ETA: 20s - loss: 7.4395 - accuracy: 0.8729
+13/15 [=========================>....] - ETA: 13s - loss: 7.3742 - accuracy: 0.8740
+14/15 [===========================>..] - ETA: 6s - loss: 7.2681 - accuracy: 0.8759 Epoch 1/20
+
+ 1/15 [=>............................] - ETA: 1:19 - loss: 36.8367 - accuracy: 0.6121
+ 2/15 [===>..........................] - ETA: 45s - loss: 36.5070 - accuracy: 0.6139 
+ 3/15 [=====>........................] - ETA: 50s - loss: 36.5200 - accuracy: 0.6156
+15/15 [==============================] - 110s 7s/step - loss: 7.2673 - accuracy: 0.8757 - val_loss: 36.5200 - val_accuracy: 0.6156
+Epoch 4/20
+
+ 1/15 [=>............................] - ETA: 1:33 - loss: 6.5885 - accuracy: 0.8887
+ 2/15 [===>..........................] - ETA: 1:26 - loss: 6.5202 - accuracy: 0.8869
+ 3/15 [=====>........................] - ETA: 1:20 - loss: 6.4078 - accuracy: 0.8897
+ 4/15 [=======>......................] - ETA: 1:13 - loss: 6.3424 - accuracy: 0.8908
+ 5/15 [=========>....................] - ETA: 1:07 - loss: 6.3856 - accuracy: 0.8896
+ 6/15 [===========>..................] - ETA: 1:00 - loss: 6.4420 - accuracy: 0.8878
+ 7/15 [=============>................] - ETA: 53s - loss: 6.4316 - accuracy: 0.8890 
+ 8/15 [===============>..............] - ETA: 46s - loss: 6.3614 - accuracy: 0.8910
+ 9/15 [=================>............] - ETA: 40s - loss: 6.3863 - accuracy: 0.8908
+10/15 [===================>..........] - ETA: 33s - loss: 6.3325 - accuracy: 0.8918
+11/15 [=====================>........] - ETA: 26s - loss: 6.2998 - accuracy: 0.8917
+12/15 [=======================>......] - ETA: 20s - loss: 6.3180 - accuracy: 0.8915
+13/15 [=========================>....] - ETA: 13s - loss: 6.3111 - accuracy: 0.8916
+14/15 [===========================>..] - ETA: 6s - loss: 6.3039 - accuracy: 0.8914 Epoch 1/20
+
+ 1/15 [=>............................] - ETA: 1:22 - loss: 36.1795 - accuracy: 0.6273
+ 2/15 [===>..........................] - ETA: 1:14 - loss: 36.3443 - accuracy: 0.6191
+ 3/15 [=====>........................] - ETA: 49s - loss: 36.3783 - accuracy: 0.6189 
+15/15 [==============================] - 110s 7s/step - loss: 6.2513 - accuracy: 0.8920 - val_loss: 36.3783 - val_accuracy: 0.6189
+Epoch 5/20
+
+ 1/15 [=>............................] - ETA: 1:33 - loss: 5.6752 - accuracy: 0.8992
+ 2/15 [===>..........................] - ETA: 1:26 - loss: 5.7499 - accuracy: 0.8992
+ 3/15 [=====>........................] - ETA: 1:19 - loss: 5.9656 - accuracy: 0.8957
+ 4/15 [=======>......................] - ETA: 1:13 - loss: 5.9028 - accuracy: 0.8952
+ 5/15 [=========>....................] - ETA: 1:06 - loss: 5.8231 - accuracy: 0.8974
+ 6/15 [===========>..................] - ETA: 59s - loss: 5.7012 - accuracy: 0.9000 
+ 7/15 [=============>................] - ETA: 53s - loss: 5.7195 - accuracy: 0.8994
+ 8/15 [===============>..............] - ETA: 46s - loss: 5.6588 - accuracy: 0.9003
+ 9/15 [=================>............] - ETA: 40s - loss: 5.6149 - accuracy: 0.9018
+10/15 [===================>..........] - ETA: 33s - loss: 5.5631 - accuracy: 0.9027
+11/15 [=====================>........] - ETA: 26s - loss: 5.6011 - accuracy: 0.9025
+12/15 [=======================>......] - ETA: 20s - loss: 5.6317 - accuracy: 0.9022
+13/15 [=========================>....] - ETA: 13s - loss: 5.5901 - accuracy: 0.9031
+14/15 [===========================>..] - ETA: 6s - loss: 5.5736 - accuracy: 0.9029 Epoch 1/20
+
+ 1/15 [=>............................] - ETA: 15s - loss: 35.1593 - accuracy: 0.6632
+ 2/15 [===>..........................] - ETA: 43s - loss: 35.7933 - accuracy: 0.6238
+ 3/15 [=====>........................] - ETA: 48s - loss: 35.8799 - accuracy: 0.6284
+15/15 [==============================] - 110s 7s/step - loss: 5.5953 - accuracy: 0.9029 - val_loss: 35.8799 - val_accuracy: 0.6284
+Epoch 6/20
+
+ 1/15 [=>............................] - ETA: 1:33 - loss: 4.9620 - accuracy: 0.9195
+ 2/15 [===>..........................] - ETA: 1:26 - loss: 4.9078 - accuracy: 0.9174
+ 3/15 [=====>........................] - ETA: 1:20 - loss: 5.0555 - accuracy: 0.9134
+ 4/15 [=======>......................] - ETA: 1:13 - loss: 5.1216 - accuracy: 0.9100
+ 5/15 [=========>....................] - ETA: 1:06 - loss: 5.1545 - accuracy: 0.9083
+ 6/15 [===========>..................] - ETA: 59s - loss: 5.0776 - accuracy: 0.9110 
+ 7/15 [=============>................] - ETA: 53s - loss: 5.0824 - accuracy: 0.9111
+ 8/15 [===============>..............] - ETA: 46s - loss: 5.0072 - accuracy: 0.9119
+ 9/15 [=================>............] - ETA: 40s - loss: 4.9941 - accuracy: 0.9123
+10/15 [===================>..........] - ETA: 33s - loss: 4.9951 - accuracy: 0.9128
+11/15 [=====================>........] - ETA: 26s - loss: 5.0380 - accuracy: 0.9124
+12/15 [=======================>......] - ETA: 20s - loss: 5.0133 - accuracy: 0.9130
+13/15 [=========================>....] - ETA: 13s - loss: 4.9585 - accuracy: 0.9139
+14/15 [===========================>..] - ETA: 6s - loss: 4.9781 - accuracy: 0.9134 Epoch 1/20
+
+ 1/15 [=>............................] - ETA: 1:17 - loss: 36.1602 - accuracy: 0.6332
+ 2/15 [===>..........................] - ETA: 42s - loss: 36.6443 - accuracy: 0.6289 
+ 3/15 [=====>........................] - ETA: 48s - loss: 36.4220 - accuracy: 0.6293
+15/15 [==============================] - 109s 7s/step - loss: 4.9256 - accuracy: 0.9142 - val_loss: 36.4220 - val_accuracy: 0.6293
+Epoch 7/20
+
+ 1/15 [=>............................] - ETA: 1:33 - loss: 4.2672 - accuracy: 0.9301
+ 2/15 [===>..........................] - ETA: 1:26 - loss: 4.5291 - accuracy: 0.9252
+ 3/15 [=====>........................] - ETA: 1:20 - loss: 4.5372 - accuracy: 0.9238
+ 4/15 [=======>......................] - ETA: 1:13 - loss: 4.4746 - accuracy: 0.9247
+ 5/15 [=========>....................] - ETA: 1:06 - loss: 4.3770 - accuracy: 0.9256
+ 6/15 [===========>..................] - ETA: 59s - loss: 4.4381 - accuracy: 0.9242 
+ 7/15 [=============>................] - ETA: 53s - loss: 4.3751 - accuracy: 0.9259
+ 8/15 [===============>..............] - ETA: 46s - loss: 4.3688 - accuracy: 0.9252
+ 9/15 [=================>............] - ETA: 40s - loss: 4.3727 - accuracy: 0.9254
+10/15 [===================>..........] - ETA: 33s - loss: 4.3820 - accuracy: 0.9259
+11/15 [=====================>........] - ETA: 26s - loss: 4.4072 - accuracy: 0.9256
+12/15 [=======================>......] - ETA: 19s - loss: 4.3697 - accuracy: 0.9263
+13/15 [=========================>....] - ETA: 13s - loss: 4.4046 - accuracy: 0.9259
+14/15 [===========================>..] - ETA: 6s - loss: 4.4001 - accuracy: 0.9263 Epoch 1/20
+
+ 1/15 [=>............................] - ETA: 1:21 - loss: 35.5581 - accuracy: 0.6449
+ 2/15 [===>..........................] - ETA: 1:15 - loss: 35.9212 - accuracy: 0.6281
+ 3/15 [=====>........................] - ETA: 50s - loss: 36.0149 - accuracy: 0.6285 
+15/15 [==============================] - 110s 7s/step - loss: 4.3547 - accuracy: 0.9267 - val_loss: 36.0149 - val_accuracy: 0.6285
+Epoch 8/20
+
+ 1/15 [=>............................] - ETA: 1:33 - loss: 4.0578 - accuracy: 0.9320
+ 2/15 [===>..........................] - ETA: 1:27 - loss: 4.1639 - accuracy: 0.9305
+ 3/15 [=====>........................] - ETA: 1:20 - loss: 4.0427 - accuracy: 0.9345
+ 4/15 [=======>......................] - ETA: 1:13 - loss: 4.0276 - accuracy: 0.9349
+ 5/15 [=========>....................] - ETA: 1:07 - loss: 3.9505 - accuracy: 0.9364
+ 6/15 [===========>..................] - ETA: 1:00 - loss: 3.8988 - accuracy: 0.9377
+ 7/15 [=============>................] - ETA: 53s - loss: 3.8554 - accuracy: 0.9386 
+ 8/15 [===============>..............] - ETA: 46s - loss: 3.8166 - accuracy: 0.9387
+ 9/15 [=================>............] - ETA: 40s - loss: 3.8025 - accuracy: 0.9394
+10/15 [===================>..........] - ETA: 33s - loss: 3.8286 - accuracy: 0.9389
+11/15 [=====================>........] - ETA: 26s - loss: 3.8107 - accuracy: 0.9394
+12/15 [=======================>......] - ETA: 20s - loss: 3.8151 - accuracy: 0.9391
+13/15 [=========================>....] - ETA: 13s - loss: 3.8194 - accuracy: 0.9389
+14/15 [===========================>..] - ETA: 6s - loss: 3.7975 - accuracy: 0.9392 Epoch 1/20
+
+ 1/15 [=>............................] - ETA: 15s - loss: 35.0041 - accuracy: 0.6474
+ 2/15 [===>..........................] - ETA: 43s - loss: 35.5380 - accuracy: 0.6320
+ 3/15 [=====>........................] - ETA: 48s - loss: 35.6859 - accuracy: 0.6275
+15/15 [==============================] - 110s 7s/step - loss: 3.7836 - accuracy: 0.9395 - val_loss: 35.6859 - val_accuracy: 0.6275
+Epoch 9/20
+
+ 1/15 [=>............................] - ETA: 1:34 - loss: 2.6331 - accuracy: 0.9609
+ 2/15 [===>..........................] - ETA: 1:28 - loss: 2.8874 - accuracy: 0.9529
+ 3/15 [=====>........................] - ETA: 1:23 - loss: 2.9223 - accuracy: 0.9525
+ 4/15 [=======>......................] - ETA: 1:15 - loss: 2.9269 - accuracy: 0.9522
+ 5/15 [=========>....................] - ETA: 1:08 - loss: 2.9655 - accuracy: 0.9515
+ 6/15 [===========>..................] - ETA: 1:01 - loss: 3.0367 - accuracy: 0.9511
+ 7/15 [=============>................] - ETA: 54s - loss: 3.0965 - accuracy: 0.9498 
+ 8/15 [===============>..............] - ETA: 47s - loss: 3.1401 - accuracy: 0.9492
+ 9/15 [=================>............] - ETA: 40s - loss: 3.2004 - accuracy: 0.9475
+10/15 [===================>..........] - ETA: 33s - loss: 3.2257 - accuracy: 0.9474
+11/15 [=====================>........] - ETA: 27s - loss: 3.2696 - accuracy: 0.9463
+12/15 [=======================>......] - ETA: 20s - loss: 3.2755 - accuracy: 0.9463
+13/15 [=========================>....] - ETA: 13s - loss: 3.2742 - accuracy: 0.9461
+14/15 [===========================>..] - ETA: 6s - loss: 3.2507 - accuracy: 0.9465 Epoch 1/20
+
+ 1/15 [=>............................] - ETA: 1:17 - loss: 35.6024 - accuracy: 0.6324
+ 2/15 [===>..........................] - ETA: 42s - loss: 35.7708 - accuracy: 0.6333 
+ 3/15 [=====>........................] - ETA: 48s - loss: 35.6768 - accuracy: 0.6367
+15/15 [==============================] - 111s 7s/step - loss: 3.2723 - accuracy: 0.9463 - val_loss: 35.6768 - val_accuracy: 0.6367
+Epoch 10/20
+
+ 1/15 [=>............................] - ETA: 1:33 - loss: 2.4724 - accuracy: 0.9660
+ 2/15 [===>..........................] - ETA: 1:26 - loss: 2.6403 - accuracy: 0.9623
+ 3/15 [=====>........................] - ETA: 1:20 - loss: 2.6567 - accuracy: 0.9621
+ 4/15 [=======>......................] - ETA: 1:13 - loss: 2.7246 - accuracy: 0.9602
+ 5/15 [=========>....................] - ETA: 1:06 - loss: 2.6740 - accuracy: 0.9610
+ 6/15 [===========>..................] - ETA: 1:00 - loss: 2.6973 - accuracy: 0.9599
+ 7/15 [=============>................] - ETA: 53s - loss: 2.7374 - accuracy: 0.9590 
+ 8/15 [===============>..............] - ETA: 46s - loss: 2.7300 - accuracy: 0.9589
+ 9/15 [=================>............] - ETA: 40s - loss: 2.7514 - accuracy: 0.9581
+10/15 [===================>..........] - ETA: 33s - loss: 2.7432 - accuracy: 0.9580
+11/15 [=====================>........] - ETA: 26s - loss: 2.7748 - accuracy: 0.9581
+12/15 [=======================>......] - ETA: 20s - loss: 2.8176 - accuracy: 0.9579
+13/15 [=========================>....] - ETA: 13s - loss: 2.7949 - accuracy: 0.9586
+14/15 [===========================>..] - ETA: 6s - loss: 2.7961 - accuracy: 0.9584 Epoch 1/20
+
+ 1/15 [=>............................] - ETA: 1:17 - loss: 35.4598 - accuracy: 0.6469
+ 2/15 [===>..........................] - ETA: 1:12 - loss: 35.6413 - accuracy: 0.6342
+ 3/15 [=====>........................] - ETA: 49s - loss: 36.0422 - accuracy: 0.6304 
+15/15 [==============================] - 110s 7s/step - loss: 2.7713 - accuracy: 0.9586 - val_loss: 36.0422 - val_accuracy: 0.6304
+Epoch 11/20
+
+ 1/15 [=>............................] - ETA: 1:33 - loss: 2.4382 - accuracy: 0.9637
+ 2/15 [===>..........................] - ETA: 1:26 - loss: 2.5177 - accuracy: 0.9629
+ 3/15 [=====>........................] - ETA: 1:19 - loss: 2.4469 - accuracy: 0.9645
+ 4/15 [=======>......................] - ETA: 1:13 - loss: 2.3985 - accuracy: 0.9656
+ 5/15 [=========>....................] - ETA: 1:06 - loss: 2.3841 - accuracy: 0.9664
+ 6/15 [===========>..................] - ETA: 59s - loss: 2.3495 - accuracy: 0.9662 
+ 7/15 [=============>................] - ETA: 53s - loss: 2.3784 - accuracy: 0.9655
+ 8/15 [===============>..............] - ETA: 46s - loss: 2.4321 - accuracy: 0.9640
+ 9/15 [=================>............] - ETA: 40s - loss: 2.4597 - accuracy: 0.9635
+10/15 [===================>..........] - ETA: 33s - loss: 2.4205 - accuracy: 0.9638
+11/15 [=====================>........] - ETA: 26s - loss: 2.4065 - accuracy: 0.9640
+12/15 [=======================>......] - ETA: 20s - loss: 2.4050 - accuracy: 0.9639
+13/15 [=========================>....] - ETA: 13s - loss: 2.3935 - accuracy: 0.9642
+14/15 [===========================>..] - ETA: 6s - loss: 2.3871 - accuracy: 0.9643 Epoch 1/20
+
+ 1/15 [=>............................] - ETA: 15s - loss: 35.5219 - accuracy: 0.6447
+ 2/15 [===>..........................] - ETA: 43s - loss: 35.5643 - accuracy: 0.6310
+ 3/15 [=====>........................] - ETA: 48s - loss: 35.6116 - accuracy: 0.6318
+15/15 [==============================] - 110s 7s/step - loss: 2.3738 - accuracy: 0.9645 - val_loss: 35.6116 - val_accuracy: 0.6318
+Epoch 12/20
+
+ 1/15 [=>............................] - ETA: 1:33 - loss: 1.8224 - accuracy: 0.9730
+ 2/15 [===>..........................] - ETA: 1:26 - loss: 2.0148 - accuracy: 0.9697
+ 3/15 [=====>........................] - ETA: 1:20 - loss: 2.0472 - accuracy: 0.9714
+ 4/15 [=======>......................] - ETA: 1:13 - loss: 1.9906 - accuracy: 0.9732
+ 5/15 [=========>....................] - ETA: 1:06 - loss: 1.9417 - accuracy: 0.9748
+ 6/15 [===========>..................] - ETA: 1:00 - loss: 1.9611 - accuracy: 0.9737
+ 7/15 [=============>................] - ETA: 53s - loss: 1.9928 - accuracy: 0.9732 
+ 8/15 [===============>..............] - ETA: 46s - loss: 1.9622 - accuracy: 0.9736
+ 9/15 [=================>............] - ETA: 40s - loss: 1.9546 - accuracy: 0.9737
+10/15 [===================>..........] - ETA: 33s - loss: 1.9769 - accuracy: 0.9735
+11/15 [=====================>........] - ETA: 26s - loss: 1.9776 - accuracy: 0.9735
+12/15 [=======================>......] - ETA: 20s - loss: 1.9758 - accuracy: 0.9732
+13/15 [=========================>....] - ETA: 13s - loss: 1.9967 - accuracy: 0.9726
+14/15 [===========================>..] - ETA: 6s - loss: 1.9955 - accuracy: 0.9725 Epoch 1/20
+
+ 1/15 [=>............................] - ETA: 1:17 - loss: 35.2965 - accuracy: 0.6340
+ 2/15 [===>..........................] - ETA: 43s - loss: 35.6965 - accuracy: 0.6316 
+ 3/15 [=====>........................] - ETA: 49s - loss: 35.6581 - accuracy: 0.6302
+15/15 [==============================] - 110s 7s/step - loss: 1.9996 - accuracy: 0.9727 - val_loss: 35.6581 - val_accuracy: 0.6302
+Epoch 13/20
+
+ 1/15 [=>............................] - ETA: 1:33 - loss: 1.5801 - accuracy: 0.9809
+ 2/15 [===>..........................] - ETA: 1:27 - loss: 1.6719 - accuracy: 0.9789
+ 3/15 [=====>........................] - ETA: 1:20 - loss: 1.6934 - accuracy: 0.9793
+ 4/15 [=======>......................] - ETA: 1:13 - loss: 1.7605 - accuracy: 0.9771
+ 5/15 [=========>....................] - ETA: 1:06 - loss: 1.7614 - accuracy: 0.9773
+ 6/15 [===========>..................] - ETA: 1:00 - loss: 1.7295 - accuracy: 0.9779
+ 7/15 [=============>................] - ETA: 53s - loss: 1.6878 - accuracy: 0.9783 
+ 8/15 [===============>..............] - ETA: 46s - loss: 1.6633 - accuracy: 0.9788
+ 9/15 [=================>............] - ETA: 40s - loss: 1.6711 - accuracy: 0.9786
+10/15 [===================>..........] - ETA: 33s - loss: 1.6950 - accuracy: 0.9780
+11/15 [=====================>........] - ETA: 26s - loss: 1.6857 - accuracy: 0.9782
+12/15 [=======================>......] - ETA: 20s - loss: 1.6675 - accuracy: 0.9785
+13/15 [=========================>....] - ETA: 13s - loss: 1.6566 - accuracy: 0.9789
+14/15 [===========================>..] - ETA: 6s - loss: 1.6484 - accuracy: 0.9794 Epoch 1/20
+
+ 1/15 [=>............................] - ETA: 1:17 - loss: 35.5119 - accuracy: 0.6324
+ 2/15 [===>..........................] - ETA: 1:12 - loss: 35.5718 - accuracy: 0.6285
+ 3/15 [=====>........................] - ETA: 48s - loss: 35.3113 - accuracy: 0.6311 
+15/15 [==============================] - 110s 7s/step - loss: 1.6333 - accuracy: 0.9794 - val_loss: 35.3113 - val_accuracy: 0.6311
+Epoch 14/20
+
+ 1/15 [=>............................] - ETA: 1:34 - loss: 1.4383 - accuracy: 0.9824
+ 2/15 [===>..........................] - ETA: 1:28 - loss: 1.3763 - accuracy: 0.9836
+ 3/15 [=====>........................] - ETA: 1:21 - loss: 1.4080 - accuracy: 0.9829
+ 4/15 [=======>......................] - ETA: 1:14 - loss: 1.4269 - accuracy: 0.9822
+ 5/15 [=========>....................] - ETA: 1:07 - loss: 1.4492 - accuracy: 0.9820
+ 6/15 [===========>..................] - ETA: 1:00 - loss: 1.4312 - accuracy: 0.9826
+ 7/15 [=============>................] - ETA: 53s - loss: 1.4277 - accuracy: 0.9825 
+ 8/15 [===============>..............] - ETA: 46s - loss: 1.4206 - accuracy: 0.9828
+ 9/15 [=================>............] - ETA: 40s - loss: 1.4030 - accuracy: 0.9832
+10/15 [===================>..........] - ETA: 33s - loss: 1.3794 - accuracy: 0.9834
+11/15 [=====================>........] - ETA: 26s - loss: 1.3725 - accuracy: 0.9835
+12/15 [=======================>......] - ETA: 20s - loss: 1.3858 - accuracy: 0.9830
+13/15 [=========================>....] - ETA: 13s - loss: 1.3870 - accuracy: 0.9831
+14/15 [===========================>..] - ETA: 6s - loss: 1.3934 - accuracy: 0.9827 Epoch 1/20
+
+ 1/15 [=>............................] - ETA: 16s - loss: 34.3249 - accuracy: 0.6553
+ 2/15 [===>..........................] - ETA: 43s - loss: 34.9221 - accuracy: 0.6231
+ 3/15 [=====>........................] - ETA: 49s - loss: 35.0744 - accuracy: 0.6298
+15/15 [==============================] - 110s 7s/step - loss: 1.4007 - accuracy: 0.9826 - val_loss: 35.0744 - val_accuracy: 0.6298
+Epoch 15/20
+
+ 1/15 [=>............................] - ETA: 1:34 - loss: 1.4464 - accuracy: 0.9812
+ 2/15 [===>..........................] - ETA: 1:26 - loss: 1.3546 - accuracy: 0.9830
+ 3/15 [=====>........................] - ETA: 1:20 - loss: 1.2929 - accuracy: 0.9844
+ 4/15 [=======>......................] - ETA: 1:13 - loss: 1.2993 - accuracy: 0.9842
+ 5/15 [=========>....................] - ETA: 1:07 - loss: 1.2988 - accuracy: 0.9841
+ 6/15 [===========>..................] - ETA: 1:00 - loss: 1.2908 - accuracy: 0.9842
+ 7/15 [=============>................] - ETA: 53s - loss: 1.2759 - accuracy: 0.9844 
+ 8/15 [===============>..............] - ETA: 46s - loss: 1.2663 - accuracy: 0.9849
+ 9/15 [=================>............] - ETA: 40s - loss: 1.2379 - accuracy: 0.9853
+10/15 [===================>..........] - ETA: 33s - loss: 1.2325 - accuracy: 0.9855
+11/15 [=====================>........] - ETA: 26s - loss: 1.2289 - accuracy: 0.9858
+12/15 [=======================>......] - ETA: 20s - loss: 1.2197 - accuracy: 0.9860
+13/15 [=========================>....] - ETA: 13s - loss: 1.2092 - accuracy: 0.9861
+14/15 [===========================>..] - ETA: 6s - loss: 1.2103 - accuracy: 0.9859 Epoch 1/20
+
+ 1/15 [=>............................] - ETA: 1:17 - loss: 36.0010 - accuracy: 0.6082
+ 2/15 [===>..........................] - ETA: 43s - loss: 35.2410 - accuracy: 0.6156 
+ 3/15 [=====>........................] - ETA: 48s - loss: 35.4054 - accuracy: 0.6189
+15/15 [==============================] - 110s 7s/step - loss: 1.1981 - accuracy: 0.9861 - val_loss: 35.4054 - val_accuracy: 0.6189
+Epoch 16/20
+
+ 1/15 [=>............................] - ETA: 1:33 - loss: 0.8728 - accuracy: 0.9898
+ 2/15 [===>..........................] - ETA: 1:26 - loss: 0.9042 - accuracy: 0.9910
+ 3/15 [=====>........................] - ETA: 1:19 - loss: 0.9204 - accuracy: 0.9902
+ 4/15 [=======>......................] - ETA: 1:13 - loss: 0.9095 - accuracy: 0.9908
+ 5/15 [=========>....................] - ETA: 1:06 - loss: 0.9161 - accuracy: 0.9902
+ 6/15 [===========>..................] - ETA: 59s - loss: 0.9177 - accuracy: 0.9903 
+ 7/15 [=============>................] - ETA: 53s - loss: 0.9261 - accuracy: 0.9902
+ 8/15 [===============>..............] - ETA: 46s - loss: 0.9410 - accuracy: 0.9900
+ 9/15 [=================>............] - ETA: 39s - loss: 0.9652 - accuracy: 0.9898
+10/15 [===================>..........] - ETA: 33s - loss: 0.9813 - accuracy: 0.9897
+11/15 [=====================>........] - ETA: 26s - loss: 0.9885 - accuracy: 0.9896
+12/15 [=======================>......] - ETA: 19s - loss: 0.9755 - accuracy: 0.9898
+13/15 [=========================>....] - ETA: 13s - loss: 0.9828 - accuracy: 0.9896
+14/15 [===========================>..] - ETA: 6s - loss: 0.9782 - accuracy: 0.9896 Epoch 1/20
+
+ 1/15 [=>............................] - ETA: 1:17 - loss: 35.4245 - accuracy: 0.6191
+ 2/15 [===>..........................] - ETA: 1:12 - loss: 35.4227 - accuracy: 0.6232
+ 3/15 [=====>........................] - ETA: 48s - loss: 35.3391 - accuracy: 0.6227 
+15/15 [==============================] - 109s 7s/step - loss: 0.9625 - accuracy: 0.9898 - val_loss: 35.3391 - val_accuracy: 0.6227
+Epoch 17/20
+
+ 1/15 [=>............................] - ETA: 1:33 - loss: 1.0240 - accuracy: 0.9879
+ 2/15 [===>..........................] - ETA: 1:27 - loss: 0.9313 - accuracy: 0.9904
+ 3/15 [=====>........................] - ETA: 1:22 - loss: 0.8892 - accuracy: 0.9914
+ 4/15 [=======>......................] - ETA: 1:14 - loss: 0.8727 - accuracy: 0.9915
+ 5/15 [=========>....................] - ETA: 1:07 - loss: 0.8567 - accuracy: 0.9918
+ 6/15 [===========>..................] - ETA: 1:00 - loss: 0.8590 - accuracy: 0.9914
+ 7/15 [=============>................] - ETA: 54s - loss: 0.8525 - accuracy: 0.9914 
+ 8/15 [===============>..............] - ETA: 47s - loss: 0.8511 - accuracy: 0.9916
+ 9/15 [=================>............] - ETA: 40s - loss: 0.8376 - accuracy: 0.9918
+10/15 [===================>..........] - ETA: 33s - loss: 0.8370 - accuracy: 0.9917
+11/15 [=====================>........] - ETA: 27s - loss: 0.8270 - accuracy: 0.9919
+12/15 [=======================>......] - ETA: 20s - loss: 0.8233 - accuracy: 0.9918
+13/15 [=========================>....] - ETA: 13s - loss: 0.8159 - accuracy: 0.9919
+14/15 [===========================>..] - ETA: 6s - loss: 0.8195 - accuracy: 0.9917 Epoch 1/20
+
+ 1/15 [=>............................] - ETA: 15s - loss: 36.1363 - accuracy: 0.6237
+ 2/15 [===>..........................] - ETA: 43s - loss: 35.5522 - accuracy: 0.6388
+ 3/15 [=====>........................] - ETA: 48s - loss: 35.6787 - accuracy: 0.6231
+15/15 [==============================] - 111s 7s/step - loss: 0.8155 - accuracy: 0.9919 - val_loss: 35.6787 - val_accuracy: 0.6231
+Epoch 18/20
+
+ 1/15 [=>............................] - ETA: 1:33 - loss: 0.7005 - accuracy: 0.9945
+ 2/15 [===>..........................] - ETA: 1:27 - loss: 0.6755 - accuracy: 0.9961
+ 3/15 [=====>........................] - ETA: 1:20 - loss: 0.6803 - accuracy: 0.9956
+ 4/15 [=======>......................] - ETA: 1:14 - loss: 0.6806 - accuracy: 0.9958
+ 5/15 [=========>....................] - ETA: 1:08 - loss: 0.7045 - accuracy: 0.9952
+ 6/15 [===========>..................] - ETA: 1:01 - loss: 0.6989 - accuracy: 0.9947
+ 7/15 [=============>................] - ETA: 54s - loss: 0.7142 - accuracy: 0.9940 
+ 8/15 [===============>..............] - ETA: 47s - loss: 0.7308 - accuracy: 0.9934
+ 9/15 [=================>............] - ETA: 41s - loss: 0.7344 - accuracy: 0.9931
+10/15 [===================>..........] - ETA: 34s - loss: 0.7278 - accuracy: 0.9931
+11/15 [=====================>........] - ETA: 27s - loss: 0.7235 - accuracy: 0.9933
+12/15 [=======================>......] - ETA: 20s - loss: 0.7211 - accuracy: 0.9934
+13/15 [=========================>....] - ETA: 13s - loss: 0.7174 - accuracy: 0.9935
+14/15 [===========================>..] - ETA: 6s - loss: 0.7117 - accuracy: 0.9937 Epoch 1/20
+
+ 1/15 [=>............................] - ETA: 1:17 - loss: 34.9618 - accuracy: 0.6383
+ 2/15 [===>..........................] - ETA: 43s - loss: 35.4317 - accuracy: 0.6316 
+ 3/15 [=====>........................] - ETA: 48s - loss: 35.3073 - accuracy: 0.6309
+15/15 [==============================] - 111s 7s/step - loss: 0.7240 - accuracy: 0.9936 - val_loss: 35.3073 - val_accuracy: 0.6309
+Epoch 19/20
+
+ 1/15 [=>............................] - ETA: 1:33 - loss: 0.6640 - accuracy: 0.9926
+ 2/15 [===>..........................] - ETA: 1:26 - loss: 0.6857 - accuracy: 0.9937
+ 3/15 [=====>........................] - ETA: 1:19 - loss: 0.6506 - accuracy: 0.9945
+ 4/15 [=======>......................] - ETA: 1:13 - loss: 0.6732 - accuracy: 0.9932
+ 5/15 [=========>....................] - ETA: 1:06 - loss: 0.6760 - accuracy: 0.9927
+ 6/15 [===========>..................] - ETA: 59s - loss: 0.6665 - accuracy: 0.9928 
+ 7/15 [=============>................] - ETA: 53s - loss: 0.6448 - accuracy: 0.9934
+ 8/15 [===============>..............] - ETA: 46s - loss: 0.6300 - accuracy: 0.9937
+ 9/15 [=================>............] - ETA: 39s - loss: 0.6207 - accuracy: 0.9941
+10/15 [===================>..........] - ETA: 33s - loss: 0.6171 - accuracy: 0.9944
+11/15 [=====================>........] - ETA: 26s - loss: 0.6184 - accuracy: 0.9943
+12/15 [=======================>......] - ETA: 20s - loss: 0.6116 - accuracy: 0.9946
+13/15 [=========================>....] - ETA: 13s - loss: 0.6028 - accuracy: 0.9947
+14/15 [===========================>..] - ETA: 6s - loss: 0.6037 - accuracy: 0.9947 Epoch 1/20
+
+ 1/15 [=>............................] - ETA: 1:17 - loss: 34.7658 - accuracy: 0.6430
+ 2/15 [===>..........................] - ETA: 1:12 - loss: 35.2061 - accuracy: 0.6320
+ 3/15 [=====>........................] - ETA: 48s - loss: 35.2975 - accuracy: 0.6302 
+15/15 [==============================] - 109s 7s/step - loss: 0.6104 - accuracy: 0.9947 - val_loss: 35.2975 - val_accuracy: 0.6302
+Epoch 20/20
+
+ 1/15 [=>............................] - ETA: 1:32 - loss: 0.5811 - accuracy: 0.9953
+ 2/15 [===>..........................] - ETA: 1:26 - loss: 0.5444 - accuracy: 0.9965
+ 3/15 [=====>........................] - ETA: 1:20 - loss: 0.5232 - accuracy: 0.9965
+ 4/15 [=======>......................] - ETA: 1:13 - loss: 0.5244 - accuracy: 0.9963
+ 5/15 [=========>....................] - ETA: 1:06 - loss: 0.5124 - accuracy: 0.9966
+ 6/15 [===========>..................] - ETA: 1:00 - loss: 0.5180 - accuracy: 0.9965
+ 7/15 [=============>................] - ETA: 53s - loss: 0.5180 - accuracy: 0.9964 
+ 8/15 [===============>..............] - ETA: 47s - loss: 0.5193 - accuracy: 0.9966
+ 9/15 [=================>............] - ETA: 40s - loss: 0.5255 - accuracy: 0.9964
+10/15 [===================>..........] - ETA: 33s - loss: 0.5203 - accuracy: 0.9963
+11/15 [=====================>........] - ETA: 26s - loss: 0.5165 - accuracy: 0.9962
+12/15 [=======================>......] - ETA: 20s - loss: 0.5214 - accuracy: 0.9960
+13/15 [=========================>....] - ETA: 13s - loss: 0.5158 - accuracy: 0.9960
+14/15 [===========================>..] - ETA: 6s - loss: 0.5219 - accuracy: 0.9960 Epoch 1/20
+
+ 1/15 [=>............................] - ETA: 15s - loss: 35.2607 - accuracy: 0.6447
+ 2/15 [===>..........................] - ETA: 43s - loss: 35.2323 - accuracy: 0.6381
+ 3/15 [=====>........................] - ETA: 48s - loss: 35.3288 - accuracy: 0.6238
+15/15 [==============================] - 110s 7s/step - loss: 0.5197 - accuracy: 0.9960 - val_loss: 35.3288 - val_accuracy: 0.6238
+                     precision    recall  f1-score   support
+
+               Task     0.4159    0.4611    0.4373       193
+            Generic     0.6923    0.7236    0.7076       199
+OtherScientificTerm     0.4096    0.5144    0.4561       348
+           Material     0.5000    0.4957    0.4978       115
+             Method     0.5936    0.6042    0.5988       336
+             Metric     0.4545    0.4348    0.4444        46
+
+          micro avg     0.5092    0.5594    0.5331      1237
+          macro avg     0.5161    0.5594    0.5358      1237
+
+[['ELG', 'is', 'a', 'directed', 'cyclic', 'graph,', 'whose', 'nodes', 'are', 'events,', 'and', 'edges', 'stand', 'for', 'the', 'sequential,', 'causal,', 'conditional', 'or', 'hypernym-hyponym', 'relations', 'between', 'events.', 'Essentially,', 'ELG', 'is', 'an', 'event', 'logic', 'knowledge', 'base,', 'which', 'reveals', 'evolutionary', 'patterns', 'and', 'development', 'logics', 'of', 'real', 'world', 'events.']]
+[{'text': 'ELG is a directed cyclic graph, whose nodes are events, and edges stand for the sequential, causal, conditional or hypernym-hyponym relations between events. Essentially, ELG is an event logic knowledge base, which reveals evolutionary patterns and development logics of real world events.', 'text_raw': ['ELG', 'is', 'a', 'directed', 'cyclic', 'graph,', 'whose', 'nodes', 'are', 'events,', 'and', 'edges', 'stand', 'for', 'the', 'sequential,', 'causal,', 'conditional', 'or', 'hypernym-hyponym', 'relations', 'between', 'events.', 'Essentially,', 'ELG', 'is', 'an', 'event', 'logic', 'knowledge', 'base,', 'which', 'reveals', 'evolutionary', 'patterns', 'and', 'development', 'logics', 'of', 'real', 'world', 'events.'], 'labels': [{'entity': 'OtherScientificTerm', 'start': 4, 'end': 5, 'value': 'cyclic graph,'}, {'entity': 'OtherScientificTerm', 'start': 7, 'end': 7, 'value': 'nodes'}, {'entity': 'OtherScientificTerm', 'start': 11, 'end': 11, 'value': 'edges'}, {'entity': 'OtherScientificTerm', 'start': 15, 'end': 18, 'value': 'sequential, causal, conditional or'}]}]
+
+Process finished with exit code 0
