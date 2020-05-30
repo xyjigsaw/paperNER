@@ -17,6 +17,7 @@ class PaperXML:
         """
         :param file_path: PDF file path
         """
+        file_path = file_path.replace('.PDF', '.pdf')
         if not path.isfile('output/' + file_path[:file_path.index('.pdf')] + '.cermine.xml'):
             parser = Parser('cermine')
             parser.parse('text', file_path, 'output', 0)
@@ -110,7 +111,8 @@ class PaperXML:
                     ref_dict[str(rf_rank)] = {'paperName': article_title, 'year': article_year}
                     rf_rank += 1
                 except IndexError as e:
-                    print('PaperXML.get_rf Error:', e)
+                    pass
+                    # print('PaperXML.get_rf Error:', e)
             return ref_dict
 
     def get_secs(self):

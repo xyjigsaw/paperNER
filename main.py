@@ -17,7 +17,7 @@ if __name__ == '__main__':
     model = ModelPredict('save')
     while True:
         print('*******************************')
-        file_path = input('input file path: ')
+        file_path = input('input file path: ').strip()
         try:
             start = time.time()
             paper = PaperXML(file_path)
