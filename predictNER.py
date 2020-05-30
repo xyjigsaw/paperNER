@@ -34,7 +34,8 @@ class ModelPredict:
             print('text:', i['text'])
             print('labels', i['labels'])
             for label in i['labels']:
-                print('\tvalue:', label['value'], '\t', label['entity'])
+                if label['entity'] != '[PAD]':
+                    print('\tvalue:', label['value'], '\t', label['entity'])
 
 
 if __name__ == '__main__':

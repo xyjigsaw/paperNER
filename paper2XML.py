@@ -137,8 +137,8 @@ class PaperXML:
                 section_dict[str(sec_rank)] = {'sec_title': sec_title}
                 section_dict[str(sec_rank)]['text'] = p_text
                 sec_rank += 1
-                with open('all_sec_text.txt', 'w+') as f:
-                    f.write(all_sec_text)
+                # with open('all_sec_text.txt', 'w+') as f:
+                #     f.write(all_sec_text)
 
             return section_dict, all_sec_text
 
@@ -146,4 +146,5 @@ class PaperXML:
 if __name__ == '__main__':
     start = time.time()
     paper = PaperXML('ELG.pdf')
+    print(paper.section_text)
     print(time.time() - start)
