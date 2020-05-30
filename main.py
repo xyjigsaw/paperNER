@@ -25,4 +25,4 @@ if __name__ == '__main__':
             model.predict(paper.section_text)
             print(time.time() - start)
         except ValueError as e:
-            print('Please input a file')
+            print('Please input PDF file path!!!')
