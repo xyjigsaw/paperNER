@@ -22,7 +22,7 @@ if __name__ == '__main__':
             start = time.time()
             paper = PaperXML(file_path)
             # print(paper.section_text)
-            model.predict(paper.section_text)
+            model.predict(paper.section_text, clear=True)
             print(time.time() - start)
         except Exception as e:
             print('Error: ', e)

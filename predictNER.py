@@ -25,17 +25,28 @@ class ModelPredict:
         sentences = [i + '.' for i in sentences]
         return [x.split() for x in sentences if x != '.']
 
-    def predict(self, sentence):
+    def predict(self, sentence, clear=False):
         sentence = sentence.strip()
         texts = self.text2array_en(sentence)
         ners = self.model.predict_entities(texts)
         for i in ners:
+            if not i['labels'] and clear:
+                continue
+            if len(i['text']) < 3 and clear:
+                continue
             print('--------------------------------')
             print('text:', i['text'])
             print('labels', i['labels'])
             for label in i['labels']:
                 if label['entity'] != '[PAD]':
-                    print('\tvalue:', label['value'], '\t', label['entity'])
+                    if clear:
+                        punctuation = '.!,;:?"“”()（）\''
+                        label['value'] = re.sub(r'[{}]+'.format(punctuation), '', label['value'])
+                        if len(label['value']) < 2:
+                            continue
+                        print('\tvalue:', label['value'], '\t', label['entity'])
+                    else:
+                        print('\tvalue:', label['value'], '\t', label['entity'])
 
 
 if __name__ == '__main__':
