@@ -22,7 +22,7 @@ Dataset is [SCIERC](http://nlp.cs.washington.edu/sciIE/) which is taken from 12 
 ## Requirements (python packages)
 
 - Python 3.6+
-- tensorflow
+- tensorflow<2.0
 - [kashgari](https://github.com/BrikerMan/Kashgari)
 
 
