@@ -42,6 +42,9 @@ paperNERapi.py
 
 
 ## Result Preview
+
+![](NER-json.png)
+
 ```bash
 "C:\Program Files\Python36\python.exe" C:/Users/xy644/Desktop/scibert-project/paperNER/main.py
 input file path: ELG.pdf
