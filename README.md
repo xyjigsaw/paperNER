@@ -33,6 +33,14 @@ pip install tensorflow<2.0
 pip install kashgari>=1.0.0,<2.0.0
 ```
 
+## API(optional)
+paperNERapi.py
+
+- fastapi
+- uvicorn
+- pydantic
+
+
 ## Result Preview
 ```bash
 "C:\Program Files\Python36\python.exe" C:/Users/xy644/Desktop/scibert-project/paperNER/main.py

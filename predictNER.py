@@ -29,6 +29,7 @@ class ModelPredict:
         sentence = sentence.strip()
         texts = self.text2array_en(sentence)
         ners = self.model.predict_entities(texts)
+        output = {"texts": []}
         for i in ners:
             if not i['labels'] and clear:
                 continue
@@ -37,6 +38,7 @@ class ModelPredict:
             print('--------------------------------')
             print('text:', i['text'])
             print('labels', i['labels'])
+            ner_ls = []
             for label in i['labels']:
                 if label['entity'] != '[PAD]':
                     if clear:
@@ -45,8 +47,13 @@ class ModelPredict:
                         if len(label['value']) < 2:
                             continue
                         print('\tvalue:', label['value'], '\t', label['entity'])
+                        ner_ls.append({"entity": label['value'], "tag": label['entity']})
                     else:
                         print('\tvalue:', label['value'], '\t', label['entity'])
+                        ner_ls.append({label['value']: label['entity']})
+            output["texts"].append({"sentence": i['text'], "labels": i['labels'], "NER": ner_ls})
+
+        return output
 
 
 if __name__ == '__main__':
