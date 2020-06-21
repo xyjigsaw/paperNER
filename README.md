@@ -2,7 +2,7 @@
 
 ![](https://img.shields.io/badge/Status-Developing-brightgreen.svg)
 
-Named Entity Recognition for Paper(PDF)
+Named Entity Recognition for Scientific Paper(PDF)
 
 # Extractor/Algorithm
 
@@ -71,13 +71,6 @@ labels [{'entity': 'Method', 'start': 1, 'end': 1, 'value': 'ELG'}, {'entity': '
 	value: event logic knowledge base, 	 Method
 	value: evolutionary patterns 	 OtherScientificTerm
 	value: development logics 	 OtherScientificTerm
---------------------------------
-text: Third, experimental results show that ELG is capable of improving the performances of downstream applications, such as script event prediction.
-labels [{'entity': 'Method', 'start': 5, 'end': 5, 'value': 'ELG'}, {'entity': 'Task', 'start': 13, 'end': 13, 'value': 'downstream'}, {'entity': 'Generic', 'start': 14, 'end': 14, 'value': 'applications,'}, {'entity': 'OtherScientificTerm', 'start': 17, 'end': 18, 'value': 'script event'}]
-	value: ELG 	 Method
-	value: downstream 	 Task
-	value: applications, 	 Generic
-	value: script event 	 OtherScientificTerm
 --------------------------------
 text: ELG is a directed cyclic graph, whose nodes are events, and edges stand for the sequential, causal, conditional or hypernym-hyponym relations between events.
 labels [{'entity': 'OtherScientificTerm', 'start': 3, 'end': 5, 'value': 'directed cyclic graph,'}, {'entity': 'OtherScientificTerm', 'start': 7, 'end': 7, 'value': 'nodes'}, {'entity': 'OtherScientificTerm', 'start': 9, 'end': 9, 'value': 'events,'}, {'entity': 'OtherScientificTerm', 'start': 15, 'end': 18, 'value': 'sequential, causal, conditional or'}]
