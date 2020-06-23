@@ -79,13 +79,6 @@ labels [{'entity': 'OtherScientificTerm', 'start': 3, 'end': 5, 'value': 'direct
 	value: events, 	 OtherScientificTerm
 	value: sequential, causal, conditional or 	 OtherScientificTerm
 --------------------------------
-text: In general, events and the degree of abstraction of an event are closely related to the scene in which the event occurred, and a single event may become too abstract to understand without the context scenario.
-labels [{'entity': 'Task', 'start': 1, 'end': 1, 'value': 'general,'}, {'entity': 'OtherScientificTerm', 'start': 2, 'end': 2, 'value': 'events'}, {'entity': 'OtherScientificTerm', 'start': 7, 'end': 7, 'value': 'abstraction'}, {'entity': 'OtherScientificTerm', 'start': 10, 'end': 10, 'value': 'event'}]
-	value: general, 	 Task
-	value: events 	 OtherScientificTerm
-	value: abstraction 	 OtherScientificTerm
-	value: event 	 OtherScientificTerm
---------------------------------
 text: While (go, somewhere), (do, the things) and (eat) are unreasonable or incomplete event representations, as their semantics are too vague to be understood.
 labels [{'entity': 'Method', 'start': 1, 'end': 2, 'value': '(go, somewhere),'}, {'entity': 'Method', 'start': 5, 'end': 5, 'value': 'things)'}, {'entity': 'OtherScientificTerm', 'start': 6, 'end': 7, 'value': 'and (eat)'}, {'entity': 'OtherScientificTerm', 'start': 9, 'end': 12, 'value': 'unreasonable or incomplete event'}, {'entity': 'OtherScientificTerm', 'start': 16, 'end': 16, 'value': 'semantics'}]
 	value: (go, somewhere), 	 Method
