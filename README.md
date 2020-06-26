@@ -1,6 +1,6 @@
 # paperNER
 
-![](https://img.shields.io/badge/Status-Developing-brightgreen.svg)
+![](https://img.shields.io/badge/Status-Done-brightgreen.svg)
 
 Named Entity Recognition for Scientific Paper(PDF)
 
