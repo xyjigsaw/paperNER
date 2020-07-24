@@ -17,7 +17,7 @@ Dataset is [SCIERC](http://nlp.cs.washington.edu/sciIE/) which is taken from 12 
 - main.py: Users input pdf file path then it will generate NER outputs.
 - toolkit
   - pdf_parser: pdf2xml
-- save: BERT model for NER(**will be uploaded soon**)
+- save: BERT model for NER(**User should add their own model file to here including .h5 files.**)
  
 ## Requirements (python packages)
 
