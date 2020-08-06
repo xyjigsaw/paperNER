@@ -10,14 +10,14 @@ BERT + BiLSTM + CRF
 
 BERT is based on [SCIBERT](https://github.com/allenai/scibert)
 
-Dataset is [SCIERC](http://nlp.cs.washington.edu/sciIE/) which is taken from 12 AI conference/workshop proceedings in four AI communities, from the Semantic Scholar Corpus.
+Dataset is [SCIERC](http://nlp.cs.washington.edu/sciIE/) which is taken from 12 AI conference/workshop proceedings in four AI communities, from the semantic scholar corpus.
 
 ## Files
 
 - main.py: Users input pdf file path then it will generate NER outputs.
 - toolkit
   - pdf_parser: pdf2xml
-- save: BERT model for NER(**User should add their own model file to here including .h5 files.**)
+- save: BERT model for NER(**User should add their own model file to here such as .h5 files.**)
  
 ## Requirements (python packages)
 
@@ -44,6 +44,7 @@ paperNERapi.py
 ## Result Preview
 
 ![](NER-json.png)
+
 
 ```bash
 "C:\Program Files\Python36\python.exe" C:/Users/xy644/Desktop/scibert-project/paperNER/main.py
